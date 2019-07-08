@@ -1,0 +1,188 @@
+
+  
+  
+     .kt-top { 
+    width: 100%; 
+	 padding:2px; 
+ 
+	 background-color:#AAA; 
+	
+	 
+   }
+ 
+ .kt-top-l { margin-left:-16px;}
+ .kt-top-r { margin-right:-16px;}
+ 
+   .kt-breadcrumb { 
+    width: 100%; 
+	 padding:2px; 
+ 	 height:27px;
+	 background-color:#CCC; 
+	
+	 
+   }
+ 
+ .kt-breadcrumb-l { margin-left:-16px;}
+ .kt-breadcrumb-r { margin-right:-16px;}
+  
+.kt-head { 
+    width: 100%; 
+	 padding:2px; 
+	 height:27px;
+	 background-color:#EEE; 
+	
+	 
+   }
+ 
+ .kt-head-l { margin-left:-16px;}
+ .kt-head-r { margin-right:-16px;}
+
+.kt-foot {
+    z-index: 999; 
+   width: 100%;
+   position:fixed;
+   bottom:0; 
+   padding:2px;
+   background-color: #444;/* rgb(177, 177, 177);*/ 
+  }
+  .kt-foot-l { margin-left:-16px;}
+ .kt-foot-r { margin-right:-16px;}
+  
+    .kt-btn{
+		
+	  margin-left:1px;
+	  margin-right:1px; 
+	  height:24px;
+	   vertical-align: top;
+  }
+  
+  
+  
+    /* PNL TERMINAL */
+  #kterminal-container {
+    z-index: 998;
+   /*height: 100px; */
+   width: 100%;
+   position:fixed;
+   bottom:0; 
+   background-color:white; 
+  }
+  
+  .kt-textarea { 
+   width: 100%;
+   resize:none;
+   border: none;
+   background-color:black;
+   color:white !important;
+   font-family:'Courier New';
+   font-size:13.5px;
+  }
+  
+   /* PNL LOG */
+.kt-table-container{  
+  overflow-x:auto;
+  overflow-y:auto;
+  bottom:27px;
+}
+
+.kt-table{ 
+font-size:13.5px;
+  font-family: Courier New;
+  border-collapse: collapse;
+  min-width: 100%;
+   cursor:pointer;
+}
+/*
+.kt-table tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+ */
+ 
+.kt-table td{
+   border: 0.5px dashed #eeeeee;
+  text-align: left;
+  padding: 2px;
+  white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.kt-table-cell-sm{  
+    width: 1px;
+    white-space: nowrap;
+	
+}
+ 
+  
+  /* OBJ ROUTEBAR*/
+  .kt-routebar-inner{
+	  padding-left:10px;
+	  padding-right:10px;
+	  
+  }
+    .kt-routebar-item{
+	     background:none;
+     color:inherit;
+     border:none; 
+     padding:0!important;
+     font: inherit;
+     /*border is optional*/
+    // 
+     cursor: pointer;
+	  
+  }
+  
+    /* OBJ PROGESSBAR*/
+	
+	
+  .kt-progressbar-outer { 
+	   vertical-align: top;
+
+  width: 20em;   
+  margin-left:1px;
+ margin-right:1px; 
+ height:24px;
+  }
+  
+  
+  .kt-progressbar-inner{  
+-webkit-transition: none !important;
+transition: none !important;
+ 
+  }
+   .kt-progressbar-label-container {
+	 /*The label in the right, not inside */
+	 font-size:14px;
+	 vertical-align:top;
+	 padding-left:4px;
+	 padding-right:4px;
+	 color:white !important;
+ }
+ .kt-progressbar-label {
+	 
+ }
+  .kt-progressbar-percentage-container {
+	  /*The label in the right, not inside */
+	 font-size:14px;
+	 vertical-align:top;
+	 padding-left:4px;
+	 padding-right:4px;
+	 color:white !important;
+	 
+ }
+  .kt-progressbar-percentage {
+	 
+ }
+
+ 
+ 
+
+  .inline{
+	  display:inline-block;
+	  vertical-align:top;
+  }
+  
+ 
+
+	 
+  

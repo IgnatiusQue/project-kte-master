@@ -1,0 +1,236 @@
+ <!-- BOOTSTRAP -->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 
+  <!-- FONT AWESOME -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+ <!-- JQUERY UI-->
+   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ 
+
+ <!-- Kkterminal-->
+   <link rel="stylesheet" href="../ktee/css/ktee-1.0.css">
+ 
+  
+ <style>
+ .btn-group-xs > .btn, .btn-xs {
+    padding: .25rem .4rem;
+    font-size: .875rem;
+    line-height: .5;
+    border-radius: .2rem;
+  }
+  .inline{
+  display:inline:block;
+  }
+ </style>
+  
+
+  <body>
+   </body>
+ <div id="kterminal-container" class="" > </div>
+
+ 
+ 
+
+<!--KTERMINAL -->
+ <script src="../ktee/js/ktee-1.0.js"></script> 
+ 
+   <!--JQUERY -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!--JQUERY UI-->  
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>   
+<script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script>
+  <!--BOOTSTRAP -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>
+
+ 
+  var tree = { 
+		id:"myRoot",
+		objects:[
+	   {type:"html",position:"top-l",html:'<span  id="lbl1" class="btn btn-warning kt-btn  btn-xs inline" ><p style="margin-top:3px;">ktee </span>'},
+		 
+		{type:"html",position:"top-r",html:' <a style="font-size:14px;vertical-align:middle;">Free Html in top right</a>'},
+			{type:"drop.all.tabs",id:"drop-tabs-top", position:"top-r"},
+			
+			{type:"route.bar",position:"breadcrumb-l"},
+		
+		{type:"drop.all.tabs",id:"drop-tabs-main", position:"head-l"},
+		{type:"menu.all.tabs",id:"menu-tabs-main",position:"head-l",excludes:["html-1"]},
+	 
+		
+		{type:"navigate.back",position:"head-r"},
+		{type:"navigate.next",position:"head-r"},
+		
+		{type:"me.hide",position:"head-r"},
+
+		
+          {type:"progress.bar",id:"progressbar-main",position:"foot-l",showOnIdle:false,aloneInPosition:true,showPercentage:true,showLabel:true}, // hide.container.objects
+		  
+		  
+		  
+			{type:"html",position:"foot-l",html:'<button  id="btn1" class="btn btn-primary kt-btn   btn-xs inline" onclick="alert(this.id);"><i class="fa fa-circle"></i>btn 1</button>'},
+			{type:"html",id:"html-head-l-a",position:"foot-r",html:' <a style="font-size:14px;vertical-align:middle; margin-right:6px;color:white !important;">Free Html in footer right</a>'},
+			{type:"html",position:"foot-r",html:'<button  id="btn1" class="btn btn-primary kt-btn   btn-xs inline" onclick="alert(this.id);"><i class="fa fa-circle"></i>btn 1</button>'},
+			{type:"me.toggle",position:"foot-r"}
+		],
+		panels:
+		[
+		
+		 {type:"html",id:"html-1",name:"Html 1", html:'<p>I am Html 1<p>'},
+		 {type:"html",id:"kterminal-module",name:"Module", html:'<mod>kt-mod-iframe-demo</mod>'},
+		 
+		 {type:"branch",id:"html-3",name:"Html 3",
+				branch: { 
+						id:"html-3-branch-1",
+						objects:[
+						{type:"drop.all.tabs",position:"head-l"},
+						{type:"menu.all.tabs",position:"head-l"}
+						],
+						panels:
+						[
+						// {type:"terminal", id:"kterminal-terminal", name:"Terminal",text:'I am a Terminal type panel'},
+						{type:"html",id:"html-3-1",name:"Html 3 1", html:'<p>I am Html 3 1<p>'} ,
+						{type:"html",id:"html-3-2",name:"Html 3 2", html:'<p>I am Html 3 2<p>'} ,
+						{type:"branch",id:"html3-3",name:"Html 3 3",
+								branch: { 
+									id:"html3-3-branch-1",
+									objects:[
+									{type:"drop.all.tabs",position:"head-l"},
+									{type:"menu.all.tabs",position:"head-l"}
+									],
+									panels:
+									[
+									// {type:"terminal", id:"kterminal-terminal", name:"Terminal",text:'I am a Terminal type panel'},
+									{type:"html",id:"html-3-3-1",name:"Html 3 3 1", html:'<p>I am  Html 3 3 1<p>'} ,
+									{type:"html",id:"html-3-3-2",name:"Html 3 3 2", html:'<p>I am  Html 3 3 2 <p>'} 
+						
+									] 
+									}
+
+
+		 }
+						] 
+					}
+
+
+		 },
+		 {type:"branch",id:"elements-demo",name:"Elements",
+				branch: { 
+						id:"elements-demo-branch",
+						objects:[
+						{type:"drop.all.tabs",position:"head-l"},
+						{type:"menu.all.tabs",position:"head-l"}
+						],
+						panels:
+						[
+						{type:"branch",id:"kterminal-panels-demo",name:"Panels",
+									branch: { 
+									id:"panels-branch",
+									objects:[
+									{type:"drop.all.tabs",position:"head-l"},
+									{type:"menu.all.tabs",position:"head-l"}
+										],
+									panels:
+									[
+									 {type:"terminal", id:"kterminal-terminal", name:"Terminal",text:'I am  kterminal-terminal a terminal type resizable panel'},
+									{type:"log",id:"kterminal-log",name:"Log"},
+									{type:"embed",id:"kterminal-embed",name:"Embed",url:"https://getbootstrap.com/"},
+									// {type:"terminal", id:"kterminal-terminal", name:"Terminal",text:'I am a Terminal type panel'},
+								//	{type:"html",id:"ifr-demo", name:"Iframe", html:'<div>This is an iframe module. </div><mod>kt-mod-iframe-demo</mod>'} ,
+								//	{type:"html",id:"htm-demo", name:"Html", html:'<div>This is html module. </div><mod>kt-mod-html-demo</mod>'} ,
+									//	{type:"html",id:"html-3-2",name:"Html 3 2", html:'<p>I am Html 3 2<p>'} ,
+						 
+										] 
+					}
+
+
+		 },
+							{type:"branch",id:"kterminal-modules-demo",name:"Modules",
+									branch: { 
+									id:"modules-branch",
+									objects:[
+									{type:"drop.all.tabs",position:"head-l"},
+									{type:"menu.all.tabs",position:"head-l"}
+										],
+									panels:
+									[
+									// {type:"terminal", id:"kterminal-terminal", name:"Terminal",text:'I am a Terminal type panel'},
+									{type:"html",id:"ifr-demo", name:"Iframe", html:'<mod>kt-mod-iframe-demo</mod>'} ,
+									{type:"html",id:"htm-demo", name:"Html", html:'<div>This is html module. </div><mod>kt-mod-html-demo</mod>'} ,
+									//	{type:"html",id:"html-3-2",name:"Html 3 2", html:'<p>I am Html 3 2<p>'} ,
+						 
+										] 
+					}
+
+
+		 }
+						 
+						] 
+					}
+
+
+		 }
+		
+		 
+		],
+		modules:[
+		{type:"iframe",id:"kt-mod-iframe-demo",url:"https://v4-alpha.getbootstrap.com"},
+		{type:"html",id:"kt-mod-html-demo",html:"<a>I am a html module</a>"}
+		]
+		
+  
+ }
+  
+ var layout={
+			fullBody:true,
+			initialSize:190,
+			resizable:true,
+			top:'kt-top',
+			topL:'col-md-6 kt-top-l',
+			topR:'col-md-6 kt-top-r',
+			breadcrumb:'kt-breadcrumb',
+			breadcrumbL:'col-md-6 kt-breadcrumb-l',
+			breadcrumbR:'col-md-6 kt-breadcrumb-r',
+			head:'kt-head',
+			headL:'col-md-6 kt-head-l',
+			headR:'col-md-6 kt-head-r',
+			foot:'kt-foot',
+			footL:'col-md-6 kt-foot-l',
+			footR:'col-md-6 kt-foot-r',
+			meHide:'btn btn-warning kt-btn btn-xs',
+			meToggle:'btn btn-warning kt-btn btn-xs',
+			navigateBack:'btn btn-warning kt-btn btn-xs',
+			navigateNext:'btn btn-warning kt-btn btn-xs',
+			
+			routeBar:{
+				container:'kt-routebar-container',
+				inner:'kt-routebar-inner'
+			},
+			allTabsMenu:{
+				button:'btn btn-default kt-btn btn-xs',
+				selected:'btn-primary'
+			},
+			allTabsDrop:{
+				button:'btn btn-warning kt-btn btn-xs'
+			},
+			progressBar:{
+			 	container:'kt-progressbar-container',
+				outer:'kt-progressbar-outer',
+				inner:'kt-progressbar-inner',
+				label:'kt-progress-bar-label',
+				percentage:'kt-progress-bar-percentage'
+			}
+				
+				
+		}
+		
+//var myKterminal = new kTerminal(tree,layout);  
+$( document ).ready(function() { 
+new kTerminal(tree,layout,'kterminal-container').init();
+ 
+});
+</script>

@@ -47,8 +47,7 @@ var kt_target;
       $(".kt-textarea").css("height", $("#kterminal-container").height() - $("#" + kt_tree.id + "-head").height() - $("#" + kt_tree.id + "-head").height());
       $(".kt-iframe").css("height", $("#kterminal-container").height() - $("#" + kt_tree.id + "-head").height() - $("#" + kt_tree.id + "-head").height());
   */
-      
- 
+   
 	//RESIZABLE
     if (kt_layout.resizable) {
       $("#kterminal-container").resizable({
@@ -91,24 +90,42 @@ var kt_target;
     });
 	 
   
-	
+	   
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ kt_core.log.add('Me','Hello how re you');
+ 
 
   },
 
   log: {
     rows: [],
-    add: function(subject,content) { 
+    add: function(subject,content,panelId="kterminal-log") { 
 	var d = new Date();
 	now =  ("00" + (d.getMonth() + 1)).slice(-2) + "/" +   ("00" + d.getDate()).slice(-2) + "/" +    d.getFullYear() + " " +  ("00" + d.getHours()).slice(-2) + ":" +   ("00" + d.getMinutes()).slice(-2) + ":" +   ("00" + d.getSeconds()).slice(-2);
  
 	 kt_core.log.rows.push({datetime:now,subject:subject,content:content});
-      $('<tr><td class="kt-table-cell-sm">'+now+'</td><td class="kt-table-cell-sm">'+subject+'</td><td>'+content+'</td></tr>').appendTo('#' + kt_tree.id + '-kt-table');
+      $('<tr><td class="kt-table-cell-sm">'+now+'</td><td class="kt-table-cell-sm">'+subject+'</td><td>'+content+'</td></tr>').appendTo('#' + panelId + '-kt-table');
       kt_core.branch.adaptSize();
-      $('#' + kt_tree.id + '-kt-table-container').scrollTop($('#' + kt_tree.id + '-kt-table-container')[0].scrollHeight);
+    //  $('#' + kt_tree.id + '-kt-table-container').scrollTop($('#' + kt_tree.id + '-kt-table-container')[0].scrollHeight);
+      $('.kt-table-container').scrollTop($('.kt-table-container')[0].scrollHeight);
+ 
     },
 	clear:function(){
 		kt_core.log.rows=[];
-		 $('#' + kt_tree.id + '-kt-table').html('');
+		 $('#' + panelId + '-kt-table').html('');
 	}
   },
   branch: {
@@ -171,6 +188,8 @@ var kt_target;
 	  
 	      // KTERMINAL TEXTAREA (If exist) HEIGHT
 		 $(".kt-textarea").css("height", kt_core.panel.get.height( kt_core.panel.current));
+		  // KTERMINAL TEXTAREA (If exist) HEIGHT
+		 $(".kt-table-container").css("height", kt_core.panel.get.height( kt_core.panel.current));
 		   // MODULE IFRAME (If exist) HEIGHT
 		 $(".kt-iframe").css("height", kt_core.panel.get.height( kt_core.panel.current));
 		  
@@ -563,13 +582,13 @@ $('<div id="'+object.id+'"   class="inline ' + kt_layout.routeBar.container + ' 
 			},
 		 terminal:function(branch, i, kt_target){
 			 	 var panels=branch.panels;
-			  $('<div   class="level-' + branch.id + ' " id="' + panels[i].id + '"><textarea id="kterminal-textarea" class="kt-textarea" >' + panels[i].text + '</textarea></div>').appendTo('#' + kt_target + '-panels');
+			  $('<div   class="level-' + branch.id + ' " id="' + panels[i].id + '"><textarea id="' + panels[i].id + '-textarea" class="kt-textarea" >' + panels[i].text + '</textarea></div>').appendTo('#' + kt_target + '-panels');
          },
 		log:function(branch, i, kt_target){
 				 var panels=branch.panels;
 			$('<div   class="level-' + branch.id + ' " id="' + panels[i].id + '">' +
-              '<div id="' + branch.id + '-kt-table-container" class="kt-table-container">' +
-              '<table id="' + branch.id + '-kt-table" class="kt-table" ></table>' +
+              '<div id="' + panels[i].id + '-kt-table-container" class="kt-table-container">' +
+              '<table id="' + panels[i].id + '-kt-table" class="kt-table" ></table>' +
               '</div></div>').appendTo('#' + kt_target + '-panels');       
 		},
 		 
